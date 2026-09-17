@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="1"> 
+    <input type="number" id="2"> 
+    <input type="number" id="3">
+    <button type="button" onclick="szamol()">Gomb</button>
+    <div id="uzenet">
+        
+    </div>
+    <script>
+        function szamol() { 
+            console.log("szám");
+            let aOldal = document.getElementById("1").value;
+            console.log(aOldal);
+            aOldal = parseInt(aOldal);
+            console.log(aOldal);
+
+            let bOldal = document.getElementById("2").value;
+            console.log(bOldal);
+            bOldal = parseInt(bOldal);
+            console.log(bOldal)
+
+            let cOldal = document.getElementById("3").value;
+            console.log(cOldal);
+            cOldal = parseInt(cOldal);
+            console.log(cOldal);
+
+            if(
+                aOldal + bOldal > cOldal
+                && cOldal + bOldal > aOldal
+                && aOldal + cOldal > bOldal
+            )
+            {
+                console.log("Lehet")
+                document.getElementById("uzenet").innerHTML ="Lehet háromszög"
+            }
+            else{
+            console.log("Nem lehet")
+            document.getElementById("uzenet").innerHTML = "Nem lehet háromszög"
+            }
+            if(cOldal > aOldal && cOldal > bOldal)
+                if(cOldal * cOldal === aOldal * aOldal + bOldal * bOldal)
+                {console.log("derék")}
+            else
+            {
+                console.log("Nem derék")
+            }
+            else if(aOldal > bOldal && aOldal > cOldal)
+            {
+                if(aOldal *aOldal === bOldal * bOldal + cOldal * cOldal){
+                    console.log("Lehet derék")
+                }
+            }
+            else if(bOldal > aOldal && bOldal > cOldal)
+            {
+                if(bOldal *bOldal === cOldal * cOldal + aOldal * aOldal){
+                    console.log("Lehet derék")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
